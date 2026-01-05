@@ -60,7 +60,8 @@ ave_result = ave_result.drop_duplicates(subset=['customer_id', 'Item'])
 
 ave_result = ave_result.reindex(columns=['customer_id', 'Item', 'Item_count', 'ExtPrice', 'visit_time', 'Over_Under'])
 
-#calculate adjusted price according to average time spent - 50 minutes to determine price per minute based on expected max visit length, 60 minutes to convert visit time decimal to minutes
+#calculate adjusted price according to average time spent
+#price divided by expected max visit length in minutes times actual visit time (converted from decimal time to minutes)
 ave_result['Corrected_price'] = (ave_result['ExtPrice'] / 50) * (ave_result['visit_time'] * 60)
 
 #calculate profit loss between old price and adjusted price
