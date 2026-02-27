@@ -10,8 +10,8 @@ These scripts were written to answer operational questions that were not easily 
 ## Notes
 - The scripts were used as decision-support tools, not production systems.
 - The scripts are provided as-is to illustrate applied analysis, not as reusable tools.
-- The scripts reference customer and technician identifier column names expected in ERP export files.
-- No data files are included, and no identifiers exist in this repository.
+- The scripts reference customer and technician identifier columns expected in ERP export files; no personally identifying information is included in the scripts.
+- Simulated data files are included for illustrative purposes.
 - Developed with AI support as a learning and debugging aid. The goal was to have a working analysis, not a perfect script.
 
 ## How to Run
