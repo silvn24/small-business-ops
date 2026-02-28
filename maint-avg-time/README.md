@@ -1,18 +1,24 @@
-Maintenance Average Time & Pricing Alignment Analysis
+**Maintenance Average Time & Pricing Alignment Analysis**
+
 Overview
+
 MaintAveTimeCalc-github.py is a Python script designed to analyse exported ERP visit data in a small service-business context.
+
 The script calculates:
 •	Average visit duration per customer and work type
+
 •	Visit frequency counts
 •	Most recent posted date
 •	Most recently used price
 •	Time-normalized pricing based on a defined baseline rate
 •	Pricing variance relative to expected duration
+
 This tool was built as a quick operational audit to evaluate whether customer pricing aligns with actual service time.
  
-Business Question
-If the default service visit is 42 minutes and priced at $58,
+Business Question:
+If the default service visit is X minutes and priced at $X,
 are customers being priced appropriately relative to the average time spent on site?
+
 This script provides a high-level pricing alignment check.
 It is not intended as a full pricing optimization model.
  
@@ -22,17 +28,17 @@ What the Script Does
 3.	Removes unwanted records (e.g., specific work codes).
 4.	Calculates visit duration in hours from StartDate and EndDate.
 5.	Groups by:
-o	customer_id
-o	WorkCode
+   o	customer_id
+   o	WorkCode
 6.	Calculates:
-o	Mean visit time
-o	Number of visits
-o	Most recent posted date
-o	Most recent price
+   o	Mean visit time
+   o	Number of visits
+   o	Most recent posted date
+   o	Most recent price
 7.	Computes:
-o	Over/Under duration relative to expected visit length
-o	Time-normalized price using a default per-minute rate
-o	Pricing variance (actual price – normalized price)
+   o	Over/Under duration relative to expected visit length
+   o	Time-normalized price using a default per-minute rate
+   o	Pricing variance (actual price – normalized price)
 8.	Outputs results to a new Excel file.
  
 Key Assumptions
@@ -41,19 +47,18 @@ Key Assumptions
 •	Baseline rate per minute = 58 / 42
 •	PostedDate represents the correct ordering for identifying most recent pricing.
 •	Date-only precision is sufficient for determining recency.
-All numeric values in this repository are placeholders and do not reflect actual operational pricing.
+**All numeric values in this repository are placeholders and do not reflect actual operational pricing.**
  
-Output Columns
-Column	Description
-customer_id	Combined customer + sub-location identifier
-WorkCode	Type of service
-Item_count	Number of visits in dataset
-MostRecentPostedDate	Most recent service posting date
-Price	Most recently used price
-visit_time	Average visit duration (hours)
-Over_Under	Difference from expected visit length (hours)
-TimeNormalizedPrice	Expected price based on baseline rate
-PricingVariance	Actual price minus normalized price
+Output: Columns & Column	Description
+customer_id:	Combined customer + sub-location identifier
+WorkCode:	Type of service
+Item_count:	Number of visits per customer and corresponding service type(s) in dataset
+MostRecentPostedDate:	Most recent service posting date
+Price:	Most recently used price
+visit_time:	Average visit duration (hours)
+Over_Under:	Difference from expected visit length (hours)
+TimeNormalizedPrice:	Expected price based on baseline rate
+PricingVariance:	Actual price minus normalized price
  
 Technical Notes
 •	Uses pandas for grouping and aggregation.
@@ -78,6 +83,5 @@ This script demonstrates:
 •	Aggregation logic
 •	Business-rule encoding
 •	Analytical validation using Python
-It is shared for portfolio and demonstration purposes only.
-<img width="468" height="640" alt="image" src="https://github.com/user-attachments/assets/502e8062-505b-40b8-9af8-0880b74f0c1e" />
-<img width="468" height="640" alt="image" src="https://github.com/user-attachments/assets/502e8062-505b-40b8-9af8-0880b74f0c1e" />
+
+This script is shared for portfolio and demonstration purposes only.
